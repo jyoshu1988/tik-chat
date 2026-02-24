@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TikChat | Dashboard</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1 class="mb-0">Dashboard</h1>
+      <p class="subtitle" id="welcome-text">Loading...</p>
+    </div>
+    <button id="logout-btn" class="btn btn-secondary">Logout</button>
+  </header>
+
+  <main class="container with-bottom-space">
+    <section>
+      <h2>Users</h2>
+      <p class="subtitle">Select anyone to view profile and start chatting.</p>
+      <div id="users-grid" class="user-grid"></div>
+      <p id="users-empty" class="subtitle hidden">No other users found yet.</p>
+    </section>
+  </main>
+
+  <button id="guide-tab" class="guide-tab" type="button">Guide</button>
+  <section id="guide-panel" class="guide-panel hidden" aria-label="Guide panel">
+    <h3>Quick Guide</h3>
+    <div class="accordion-item">
+      <button class="accordion-trigger" type="button">How to change display name?</button>
+      <div class="accordion-content">Go to your user document in Firestore and update <code>displayName</code>. In a production app you would add an account settings page.</div>
+    </div>
+    <div class="accordion-item">
+      <button class="accordion-trigger" type="button">How to change emoji?</button>
+      <div class="accordion-content">Update your <code>emoji</code> value in Firestore (or via a profile settings form if you add one).</div>
+    </div>
+    <div class="accordion-item">
+      <button class="accordion-trigger" type="button">How to start a chat?</button>
+      <div class="accordion-content">From the dashboard, open a user's profile and click <strong>Chat</strong>.</div>
+    </div>
+    <div class="accordion-item">
+      <button class="accordion-trigger" type="button">How to delete account?</button>
+      <div class="accordion-content">Delete your auth user in Firebase Authentication and remove your user/chats data from Firestore with admin workflows.</div>
+    </div>
+  </section>
+
+  <script type="module" src="js/dashboard.js"></script>
+</body>
+</html>

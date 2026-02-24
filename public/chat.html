@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TikChat | Chat</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="chat-body">
+  <header class="topbar">
+    <button id="chat-back-btn" class="btn btn-secondary">← Dashboard</button>
+    <h1 id="chat-title">Chat</h1>
+    <p id="chat-status" class="subtitle mb-0">Connecting...</p>
+  </header>
+
+  <main class="chat-container with-bottom-space">
+    <section id="messages" class="messages"></section>
+  </main>
+
+  <form id="message-form" class="chat-input-bar" autocomplete="off">
+    <input id="message-input" type="text" placeholder="Type a message..." maxlength="500" required />
+    <button type="submit" class="btn btn-primary">Send</button>
+  </form>
+
+  <button id="guide-tab" class="guide-tab" type="button">Guide</button>
+  <section id="guide-panel" class="guide-panel hidden" aria-label="Guide panel">
+    <h3>Quick Guide</h3>
+    <div class="accordion-item">
+      <button class="accordion-trigger" type="button">How to change display name?</button>
+      <div class="accordion-content">Change <code>displayName</code> in your own Firestore user document.</div>
+    </div>
+    <div class="accordion-item">
+      <button class="accordion-trigger" type="button">How to change emoji?</button>
+      <div class="accordion-content">Change <code>emoji</code> in your own Firestore user document.</div>
+    </div>
+    <div class="accordion-item">
+      <button class="accordion-trigger" type="button">How to start a chat?</button>
+      <div class="accordion-content">Open a profile page and click <strong>Start Chat</strong>.</div>
+    </div>
+    <div class="accordion-item">
+      <button class="accordion-trigger" type="button">How to delete account?</button>
+      <div class="accordion-content">Delete your Firebase Auth account and clean related Firestore documents with admin rules.</div>
+    </div>
+  </section>
+
+  <script type="module" src="js/chat.js"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TikChat | Sign Up</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <main class="auth-page">
+    <section class="auth-card">
+      <h1>Create your account</h1>
+      <p class="subtitle">Join TikChat in less than a minute.</p>
+
+      <form id="signup-form" class="stack-sm">
+        <label>
+          Email
+          <input type="email" id="signup-email" placeholder="you@example.com" required />
+        </label>
+
+        <label>
+          Password
+          <input type="password" id="signup-password" minlength="6" required />
+        </label>
+
+        <label>
+          Username <span class="hint">(unique, 3-20 chars, letters/numbers/_)</span>
+          <input type="text" id="signup-username" pattern="[a-zA-Z0-9_]{3,20}" required />
+        </label>
+
+        <label>
+          Display Name
+          <input type="text" id="signup-display-name" minlength="2" maxlength="40" required />
+        </label>
+
+        <label>
+          Profile Emoji
+          <input type="text" id="signup-emoji" maxlength="2" placeholder="😀" required />
+        </label>
+
+        <button type="submit" class="btn btn-primary">Sign Up</button>
+      </form>
+
+      <p id="signup-error" class="form-error" aria-live="polite"></p>
+      <p id="signup-success" class="form-success" aria-live="polite"></p>
+      <p class="switch-link">Already have an account? <a href="index.html">Log in</a></p>
+    </section>
+  </main>
+
+  <script type="module" src="js/auth.js"></script>
+</body>
+</html>
